@@ -41,7 +41,7 @@ import car_image2 from "./car_image2.png"
 import car_image3 from "./car_image3.png"
 import car_image4 from "./car_image4.png"
 
-export const cityList = ['New York', 'Los Angeles', 'Houston', 'Chicago']
+export const cityList = ['Dwarka', 'Rajkot', 'Ahemdabad', 'Jamnagar', 'Surat', 'Vadodara', 'Gandhinagar', 'Mehsana', 'Bhavnagar', 'Anand'];
 
 export const assets = {
     logo,
