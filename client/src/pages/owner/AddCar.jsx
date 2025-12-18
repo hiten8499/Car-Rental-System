@@ -75,7 +75,7 @@ const AddCar = () => {
             </div>
 
              <div className='flex flex-col w-full'>
-              <label>Category ({currency})</label>
+              <label>Category </label>
                 <select onChange={e=>setCar({...car,category:e.target.value})} value={car.category}
                   className='px-3 py-2 mt-1 border border-borderColor rounded-md outline-none' >
                   <option value="">Select Category</option> 
@@ -90,7 +90,7 @@ const AddCar = () => {
 
             <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6'>
                <div className='flex flex-col w-full'>
-              <label>Transmission ({currency})</label>
+              <label>Transmission </label>
                 <select onChange={e=>setCar({...car,transmission:e.target.value})} value={car.transmission}
                   className='px-3 py-2 mt-1 border border-borderColor rounded-md outline-none' >
                   <option value="">Select Transmission</option> 
@@ -102,7 +102,7 @@ const AddCar = () => {
 
 
              <div className='flex flex-col w-full'>
-              <label>Fuel Type ({currency})</label>
+              <label>Fuel Type </label>
                 <select onChange={e=>setCar({...car,fuelType:e.target.value})} value={car.fuelType}
                   className='px-3 py-2 mt-1 border border-borderColor rounded-md outline-none' >
                   <option value="">Select Fuel-Type</option> 
@@ -115,7 +115,7 @@ const AddCar = () => {
             </div>
 
              <div className='flex flex-col w-full'>
-              <label>Seating Capacity ({currency})</label>
+              <label>Seating Capacity </label>
               <input type='number' placeholder='4' required
               className='px-3 py-2 mt-1 border border-Color rounded-md outline-none' value={car.seatingCapacity}
               onChange={e=>setCar({...car,seatingCapacity:e.target.value})}/>
@@ -125,10 +125,10 @@ const AddCar = () => {
 
             {/* Location */}
             < div className='flex flex-col w-full'>
-              <label>Location ({currency})</label>
+              <label>Location </label>
                 <select onChange={e=>setCar({...car,location:e.target.value})} value={car.location}
                   className='px-3 py-2 mt-1 border border-borderColor rounded-md outline-none' >
-                  <option value="">Select Locatrion</option> 
+                  <option value="">Select Location</option> 
                   <option value="Dwarka">Dwarka</option>
                   <option value="Rajkot">Rajkot</option>
                   <option value="Ahemdabad">Ahemdabad</option>
