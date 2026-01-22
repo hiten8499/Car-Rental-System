@@ -1,6 +1,10 @@
 import User from "../models/User.js";
 import bcypt from 'bcrypt';
 import jwt from 'jsonwebtoken';
+<<<<<<< HEAD
+=======
+import Car from "../models/Car.js";
+>>>>>>> 5933b73 (Made my updates after re-downloading the repo)
 
 //Generate JWT Token
 
@@ -70,4 +74,20 @@ export const getUserData= async (req,res) => {
         console.log(error.message);
             res.json({success:false,message:error.message})
        }
+<<<<<<< HEAD
+=======
+}
+
+//Function to get all car for frontend
+
+
+export const getCars= async (req,res) => {
+       try {
+             const cars= await Car.find({isAvailable:true});
+                res.json({success:true,cars})
+       } catch (error) {
+        console.log(error.message);
+            res.json({success:false,message:error.message})
+       }
+>>>>>>> 5933b73 (Made my updates after re-downloading the repo)
 }

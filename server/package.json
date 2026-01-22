@@ -18,7 +18,11 @@
     "express": "^5.2.1",
     "imagekit": "^6.0.0",
     "jsonwebtoken": "^9.0.3",
+<<<<<<< HEAD
     "mongoose": "^9.0.1",
+=======
+    "mongoose": "^9.1.5",
+>>>>>>> 5933b73 (Made my updates after re-downloading the repo)
     "multer": "^2.0.2"
   },
   "devDependencies": {

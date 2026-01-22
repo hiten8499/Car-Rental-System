@@ -1,10 +1,40 @@
 import React from 'react'
 import { assets, menuLinks } from '../assets/assets'
 import { Link, useLocation, useNavigate } from 'react-router-dom'
+<<<<<<< HEAD
 const Navbar = ({setShowLogin}) => {
     const location =useLocation();
     const [open, setOpen] = React.useState(false);
     const navigate=useNavigate();
+=======
+import { useAppContext } from '../context/AppContext'
+import { toast } from 'react-hot-toast';
+
+
+
+const Navbar = ({}) => {
+
+
+    const {setShowLogin,user,logout,isOwner,axios,setIsOwner}=useAppContext()
+    const location =useLocation();
+    const [open, setOpen] = React.useState(false);
+    const navigate=useNavigate();
+
+    const changeRole = async() => {
+      try {
+           const {data}=await axios.post('/api/owner/change-role')
+           if(data.success){
+            toast.success(data.message);
+            setIsOwner(true);
+           }else{
+            toast.error(data.message);
+           }
+      } catch (error) {
+        toast.error(error.message);
+      }
+    }
+
+>>>>>>> 5933b73 (Made my updates after re-downloading the repo)
   return (
     <div className={`flex items-center justify-between px-6 md:px-16 lg:px-24 xl:px-32 py-4 text-gray-600 
     border-b border-borderColor relative transition-all
@@ -30,10 +60,20 @@ const Navbar = ({setShowLogin}) => {
             placeholder-gray-500' placeholder='Search'/>
             <img src={assets.search_icon} alt='Search icon'/>
         </div>
+<<<<<<< HEAD
          <div className="flex max-sm:flex-col items-start sm:items-center gap-6">
              <button className="cursor-pointer" onClick={()=>navigate('/owner')}>Dashboard</button>
              <button className="cursor-pointer px-8 py-2 bg-primary hover:bg-primary-dull
              transition-all text-white rounded-lg" onClick={()=>setShowLogin(true)}>Login</button>
+=======
+
+         <div className="flex max-sm:flex-col items-start sm:items-center gap-6">
+             <button className="cursor-pointer" onClick={()=> isOwner? navigate('/owner'): changeRole()}>
+              {isOwner ? 'Dashboard':'List Cars'}</button>
+             <button className="cursor-pointer px-8 py-2 bg-primary hover:bg-primary-dull
+             transition-all text-white rounded-lg" onClick={()=> {user ? logout(): setShowLogin(true)}}>
+              {user?'LogOut':'Login'}</button>
+>>>>>>> 5933b73 (Made my updates after re-downloading the repo)
          </div>
       </div>
         <button className='sm:hidden cursor-pointer' aria_label="menu-button" onClick={()=>setOpen(!open)}>
